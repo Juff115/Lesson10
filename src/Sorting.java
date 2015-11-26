@@ -7,6 +7,8 @@ public class Sorting extends javax.swing.JFrame {
     int num[]= new int[50000];
     double start, end;
     double time=0.0;
+    int low = 0;
+    int high = num.length - 1;
     
     public Sorting() {
         initComponents();
@@ -203,6 +205,46 @@ public class Sorting extends javax.swing.JFrame {
     return minIndex;
     }
     
+    public static void quickSort(int[] arr, int low, int high) {
+	if (arr == null || arr.length == 0)
+		return;
+ 
+	if (low >= high)
+		return;
+ 
+		// pick the pivot
+		int middle = low + (high - low) / 2;
+		int pivot = arr[middle];
+ 
+		// make left < pivot and right > pivot
+		int i = low, j = high;
+		while (i <= j) {
+			while (arr[i] < pivot) {
+				i++;
+			}
+ 
+			while (arr[j] > pivot) {
+				j--;
+			}
+ 
+			if (i <= j) {
+				int temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+				i++;
+				j--;
+			}
+		}
+ 
+		// recursively sort two sub parts
+		if (low < j)
+			quickSort(arr, low, j);
+ 
+		if (high > i)
+			quickSort(arr, i, high);
+	}
+    
+    
     public static void insertionSort(int a[]){
 	int itemToInsert, j;
 	boolean stillLooking;
@@ -275,8 +317,16 @@ public class Sorting extends javax.swing.JFrame {
     }//GEN-LAST:event_btninActionPerformed
 
     private void btnqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnqActionPerformed
-        //addcode
         disbutton();
+        list.clear();
+        start = System.currentTimeMillis();
+        quickSort(num, low, high);
+        end = System.currentTimeMillis();
+        time=(end-start)/1000;
+        lblbub.setText(""+time+" Seconds");
+        for(int x=1; x<=50000;x++){
+            list.addElement(num[x]);
+        }
     }//GEN-LAST:event_btnqActionPerformed
 
     
