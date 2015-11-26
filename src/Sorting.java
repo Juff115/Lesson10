@@ -280,8 +280,14 @@ public class Sorting extends javax.swing.JFrame {
         start = System.currentTimeMillis();
         bubbleSort(num);
         end = System.currentTimeMillis();
-        time=(end-start)/1000;
-        lblbub.setText(""+time+" Seconds");
+        time=(end-start);
+        if(time>=1000){
+            time=time/1000;
+            lblbub.setText(""+time+" Seconds");
+        }
+        else{
+            lblbub.setText(""+time+" Milliseconds");
+        }
         for(int x=1; x<=50000;x++){
             list.addElement(num[x]);
         }
@@ -294,8 +300,14 @@ public class Sorting extends javax.swing.JFrame {
         start = System.currentTimeMillis();
         selectionSort(num);
         end = System.currentTimeMillis();
-        time=(end-start)/1000;
-        lblbub.setText(""+time+" Seconds");
+        time=(end-start);
+        if(time>=1000){
+            time=time/1000;
+            lblbub.setText(""+time+" Seconds");
+        }
+        else{
+            lblbub.setText(""+time+" Milliseconds");
+        }
         for(int x=1; x<=50000;x++){
             list.addElement(num[x]);
         }
@@ -308,8 +320,14 @@ public class Sorting extends javax.swing.JFrame {
         start = System.currentTimeMillis();
         insertionSort(num);
         end = System.currentTimeMillis();
-        time=(end-start)/1000;
-        lblbub.setText(""+time+" Seconds");
+        time=(end-start);
+        if(time>=1000){
+            time=time/1000;
+            lblbub.setText(""+time+" Seconds");
+        }
+        else{
+            lblbub.setText(""+time+" Milliseconds");
+        }
         for(int x=1; x<=50000;x++){
             list.addElement(num[x]);
         }
@@ -322,8 +340,14 @@ public class Sorting extends javax.swing.JFrame {
         start = System.currentTimeMillis();
         quickSort(num, low, high);
         end = System.currentTimeMillis();
-        time=(end-start)/1000;
-        lblbub.setText(""+time+" Seconds");
+        time=(end-start);
+        if(time>=1000){
+            time=time/1000;
+            lblbub.setText(""+time+" Seconds");
+        }
+        else{
+            lblbub.setText(""+time+" Milliseconds");
+        }
         for(int x=1; x<=50000;x++){
             list.addElement(num[x]);
         }
