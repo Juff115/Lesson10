@@ -147,7 +147,7 @@ public class Sorting extends javax.swing.JFrame {
         btnq.setEnabled(true);
         list.clear();
         lblbub.setText("");
-        for(int x=1; x<=50000;x++){
+        for(int x=1; x<50000;x++){
             num[x]= ((int)(Math.random()*50000)+1);
             list.addElement(num[x]);
         }
@@ -268,7 +268,7 @@ public class Sorting extends javax.swing.JFrame {
         else{
             lblbub.setText(""+time+" Milliseconds");
         }
-        for(int x=1; x<=50000;x++){
+        for(int x=1; x<50000;x++){
             list.addElement(num[x]);
         }
         
@@ -288,7 +288,7 @@ public class Sorting extends javax.swing.JFrame {
         else{
             lblbub.setText(""+time+" Milliseconds");
         }
-        for(int x=1; x<=50000;x++){
+        for(int x=1; x<50000;x++){
             list.addElement(num[x]);
         }
         
@@ -308,7 +308,7 @@ public class Sorting extends javax.swing.JFrame {
         else{
             lblbub.setText(""+time+" Milliseconds");
         }
-        for(int x=1; x<=50000;x++){
+        for(int x=1; x<50000;x++){
             list.addElement(num[x]);
         }
         
@@ -328,7 +328,7 @@ public class Sorting extends javax.swing.JFrame {
         else{
             lblbub.setText(""+time+" Milliseconds");
         }
-        for(int x=1; x<=50000;x++){
+        for(int x=1; x<50000;x++){
             list.addElement(num[x]);
         }
     }//GEN-LAST:event_btnqActionPerformed
